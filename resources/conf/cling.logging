@@ -1,0 +1,4 @@
+# Turn off cling logging.
+# Cling is a module used for upnp setting in communication layer.
+org.teleal.cling.level = OFF
+

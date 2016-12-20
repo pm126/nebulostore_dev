@@ -1,0 +1,12 @@
+<peer>
+  <broker>
+    <space-contributed-kb>
+      3072
+    </space-contributed-kb>
+  </broker>
+  <networkmonitor>
+    <statistics-update-interval-millis>
+      700
+    </statistics-update-interval-millis>
+  </networkmonitor>
+</peer>

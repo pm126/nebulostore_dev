@@ -1,0 +1,5 @@
+NebuloStore - a P2P storage system.
+Distributed under GNU LGPL v3
+
+Please run using:
+    java -jar Nebulostore.jar

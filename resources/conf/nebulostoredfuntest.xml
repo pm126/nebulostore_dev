@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exampledfuntest>
+  <LocalEnvironmentFactory>
+    <environmentCount>
+      5
+    </environmentCount>
+  </LocalEnvironmentFactory>
+  <SSHEnvironmentFactory>
+    <hosts>
+      <!-- Provide list of SSH accessible hosts to test separated by a comma.-->
+ubuntu00.local,
+ubuntu01.local,
+ubuntu02.local,
+ubuntu03.local,
+ubuntu04.local,
+ubuntu05.local,
+ubuntu06.local,
+ubuntu07.local,
+ubuntu08.local,
+ubuntu09.local,
+ubuntu10.local,
+ubuntu11.local,
+ubuntu12.local,
+ubuntu13.local,
+ubuntu14.local,
+ubuntu15.local,
+ubuntu16.local,
+ubuntu17.local,
+ubuntu18.local,
+ubuntu19.local,
+ubuntu20.local,
+ubuntu21.local,
+ubuntu22.local,
+ubuntu23.local,
+ubuntu24.local,
+ubuntu25.local,
+ubuntu26.local,
+ubuntu27.local,
+ubuntu28.local,
+ubuntu29.local,
+ubuntu30.local,
+ubuntu31.local,
+ubuntu32.local,
+ubuntu33.local,
+ubuntu34.local,
+ubuntu35.local,
+ubuntu36.local,
+ubuntu37.local,
+ubuntu38.local,
+ubuntu39.local,
+ubuntu40.local,
+ubuntu41.local,
+ubuntu42.local,
+ubuntu43.local,
+ubuntu44.local,
+<!--ubuntu45.local,
+ubuntu46.local,
+ubuntu47.local,
+ubuntu48.local,
+ubuntu49.local,
+ubuntu50.local,
+ubuntu51.local,
+ubuntu52.local,
+ubuntu53.local,
+ubuntu54.local,
+ubuntu55.local,
+ubuntu56.local,
+ubuntu57.local,
+ubuntu58.local,
+ubuntu59.local,
+ubuntu60.local,
+ubuntu61.local,
+ubuntu63.local,
+ubuntu64.local,
+ubuntu65.local,
+ubuntu66.local,
+ubuntu67.local,
+ubuntu68.local,
+ubuntu69.local,
+ubuntu70.local,
+ubuntu71.local,
+ubuntu72.local,
+ubuntu73.local,-->
+    </hosts>
+    <username>
+      ubuntu
+    </username>
+    <privateKeyPath>
+      <!-- Provide path to ssh private key, it has to be accessible -->
+      /home/piotrm/.ssh/id_rsa
+    </privateKeyPath>
+  </SSHEnvironmentFactory>
+  <NebulostoreEnvironmentPreparator>
+    <commInitialPort>
+      11000
+    </commInitialPort>
+    <restInitialPort>
+      14000
+    </restInitialPort>
+  </NebulostoreEnvironmentPreparator>
+  <NebulostoreAppFactory>
+    <javaCommand>
+      java
+    </javaCommand>
+  </NebulostoreAppFactory>
+  <MultiTestRunner>
+    <shouldPrepareEnvironments>
+      true
+    </shouldPrepareEnvironments>
+    <shouldCleanEnvironments>
+      true
+    </shouldCleanEnvironments>
+  </MultiTestRunner>
+  <NebulostorePeersListTestScript>
+    <sleepDuration>
+      50000
+    </sleepDuration>
+  </NebulostorePeersListTestScript>
+  <NebulostoreReliabilityTestScript>
+    <failure-probability>
+      0.75
+    </failure-probability>
+    <avail-checker-period-milis>
+      15000
+    </avail-checker-period-milis>
+    <init-phase-duration-minutes>
+      5
+    </init-phase-duration-minutes>
+  </NebulostoreReliabilityTestScript>
+  <NebulostoreAsyncTestScript>
+    <main-phase-duration-minutes>
+      10
+    </main-phase-duration-minutes>
+    <synchronization-phase-duration-minutes>
+      5
+    </synchronization-phase-duration-minutes>
+  </NebulostoreAsyncTestScript>
+  <NebulostoreErasureCodingTestScript>
+    <store-phase-duration-minutes>
+      3
+    </store-phase-duration-minutes>
+    <main-phase-duration-minutes>
+      5
+    </main-phase-duration-minutes>
+    <peer-start-phase-duration-minutes>
+      2
+    </peer-start-phase-duration-minutes>
+  </NebulostoreErasureCodingTestScript>
+  <test-script>
+    org.nebulostore.dfuntest.async.NebulostoreAsyncTestScript
+    <!--org.nebulostore.dfuntest.coding.NebulostoreErasureCodingTestScript-->
+  </test-script>
+  <class-name>
+    org.nebulostore.dfuntest.async.peers.AsyncPerfTestingPeer
+    <!--org.nebulostore.dfuntest.coding.peers.CodingAvailabilityTestingPeer-->
+  </class-name>
+  <configuration-class-name>
+    org.nebulostore.dfuntest.async.peers.AsyncPerfTestingPeerConfiguration
+    <!--org.nebulostore.dfuntest.coding.peers.CodingAvailabilityTestingPeerConfiguration-->
+  </configuration-class-name>
+  <test-database>
+    <host>naan.mimuw.edu.pl</host>
+    <port>5432</port>
+    <database>postgres</database>
+    <user>postgres</user>
+    <password>latwehaslo_pwr</password>
+    <update_key type="Boolean">true</update_key>
+  </test-database>
+  <send-libraries>
+    true
+  </send-libraries>
+</exampledfuntest>

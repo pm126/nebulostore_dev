@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  [
+    <!ENTITY pattern "&#37;d{HH:mm:ss,SSS} [&#37;t | &#37;c{1}] &#37;p: &#37;m&#37;n">
+  ]>
+<Configuration status="trace">
+
+  <Appenders>
+    <Console name="CA">
+      <ThresholdFilter level="ERROR" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </Console>
+
+  <!--
+  <appender name="FA" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/all.log" />
+    <param name="Threshold" value="TRACE" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+  -->
+
+    <File name="FA-api" fileName="logs/api.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-appcore" fileName="logs/appcore.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-async" fileName="logs/async.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-broker" fileName="logs/broker.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-comm" fileName="logs/comm.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-dht" fileName="logs/dht.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-tomp2p" fileName="logs/tomp2p.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-testing" fileName="logs/testing.log">
+      <ThresholdFilter level="DEBUG" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-crypto" fileName="logs/crypto.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-dispatcher" fileName="logs/dispatcher.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-networkmonitor" fileName="logs/networkmonitor.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-peers" fileName="logs/peers.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-replicaresolver" fileName="logs/replicaresolver.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-replicator" fileName="logs/replicator.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-timer" fileName="logs/timer.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-utils" fileName="logs/utils.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+
+    <File name="FA-rest" fileName="logs/rest.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+  
+    <File name="FA-coding" fileName="logs/coding.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+  
+    <!--<File name="FA-ssh" fileName="logs/ssh.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>-->
+  
+    <File name="FA-jersey" fileName="logs/jersey.log">
+      <ThresholdFilter level="TRACE" onMatch="ACCEPT" />
+      <PatternLayout pattern="&pattern;" />
+    </File>
+  </Appenders>
+
+  <Loggers>
+
+    <Logger name="org.nebulostore.api" level="TRACE">
+      <AppenderRef ref="FA-api" />
+    </Logger>
+
+    <Logger name="org.nebulostore.appcore" level="TRACE">
+      <AppenderRef ref="FA-appcore"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.async" level="TRACE">
+      <AppenderRef ref="FA-async" />
+    </Logger>
+
+    <Logger name="org.nebulostore.broker" level="TRACE">
+      <AppenderRef ref="FA-broker"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.communication" level="TRACE">
+      <AppenderRef ref="FA-comm"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.newcommunication" level="TRACE">
+      <AppenderRef ref="FA-comm"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.communication.dht" level="TRACE">
+      <AppenderRef ref="FA-dht"/>
+    </Logger>
+
+    <Logger name="net.tomp2p" level="TRACE">
+      <AppenderRef ref="FA-tomp2p" />
+    </Logger>
+
+    <Logger name="org.nebulostore.conductor" level="DEBUG">
+      <AppenderRef ref="FA-testing"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.systest" level="DEBUG">
+      <AppenderRef ref="FA-testing"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.dfuntest" level="DEBUG">
+      <AppenderRef ref="FA-testing"/>
+    </Logger>
+    
+    <Logger name="me.gregorias.dfuntest" level="DEBUG">
+      <AppenderRef ref="FA-testing"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.crypto" level="TRACE">
+      <AppenderRef ref="FA-crypto"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.dispatcher" level="TRACE">
+      <AppenderRef ref="FA-dispatcher"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.networkmonitor" level="TRACE">
+      <AppenderRef ref="FA-networkmonitor"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.peers" level="TRACE">
+      <AppenderRef ref="FA-peers"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.replicator" level="TRACE">
+      <AppenderRef ref="FA-replicator"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.replicaresolver" level="TRACE">
+      <AppenderRef ref="FA-replicaresolver"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.timer" level="TRACE">
+      <AppenderRef ref="FA-timer"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.utils" level="TRACE">
+      <AppenderRef ref="FA-utils"/>
+    </Logger>
+
+    <Logger name="org.nebulostore.rest" level="TRACE">
+      <AppenderRef ref="FA-rest"/>
+    </Logger>
+    
+    <Logger name="org.nebulostore.coding" level="TRACE">
+      <AppenderRef ref="FA-coding"/>
+    </Logger>
+    
+    <Logger name="org.glassfish.jersey" level="TRACE">
+      <AppenderRef ref="FA-jersey"/>
+    </Logger>
+
+    <!--<Logger name="net.schmizz.sshj" level="TRACE">
+      <AppenderRef ref="FA-ssh"/>
+    </Logger>-->
+
+    <Root level="TRACE">
+      <AppenderRef ref="CA" />
+    </Root>
+  </Loggers>
+
+</Configuration>
+

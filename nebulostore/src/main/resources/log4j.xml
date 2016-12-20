@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd"
+  [
+    <!ENTITY pattern "&#37;d{HH:mm:ss,SSS} [&#37;t | &#37;c{1}] &#37;p: &#37;m&#37;n">
+  ]>
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+  <appender name="CA" class="org.apache.log4j.ConsoleAppender">
+    <param name="Threshold" value="ERROR" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <!--
+  <appender name="FA" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/all.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+  -->
+
+  <appender name="FA-api" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/api.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-appcore" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/appcore.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-async" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/async.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-broker" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/broker.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-comm" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/comm.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-dht" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/dht.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-tomp2p" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/tomp2p.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-testing" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/testing.log" />
+    <param name="Threshold" value="TRACE" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-crypto" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/crypto.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-dispatcher" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/dispatcher.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-networkmonitor" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/networkmonitor.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-peers" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/peers.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-replicaresolver" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/replicaresolver.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-replicator" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/replicator.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-timer" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/timer.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-utils" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/utils.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <appender name="FA-rest" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/rest.log" />
+    <param name="Threshold" value="DEBUG" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+  
+  <appender name="FA-coding" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/coding.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+  
+  <appender name="FA-ssh" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/ssh.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+  
+    <appender name="FA-jersey" class="org.apache.log4j.FileAppender">
+    <param name="File" value="logs/jersey.log" />
+    <param name="Threshold" value="INFO" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="&pattern;" />
+    </layout>
+  </appender>
+
+  <logger name="org.nebulostore.api">
+    <level value="INFO" />
+    <appender-ref ref="FA-api" />
+  </logger>
+
+  <logger name="org.nebulostore.appcore">
+    <level value="INFO" />
+    <appender-ref ref="FA-appcore"/>
+  </logger>
+
+  <logger name="org.nebulostore.async">
+    <level value="INFO" />
+    <appender-ref ref="FA-async" />
+  </logger>
+
+  <logger name="org.nebulostore.broker">
+    <level value="INFO" />
+    <appender-ref ref="FA-broker"/>
+  </logger>
+  <logger name="org.nebulostore.communication">
+    <level value="INFO"/>
+    <appender-ref ref="FA-comm"/>
+  </logger>
+
+  <logger name="org.nebulostore.newcommunication">
+    <level value="INFO"/>
+    <appender-ref ref="FA-comm"/>
+  </logger>
+
+  <logger name="org.nebulostore.communication.dht">
+    <level value="INFO"/>
+    <appender-ref ref="FA-dht"/>
+  </logger>
+
+  <logger name="net.tomp2p">
+    <level value="OFF" />
+    <appender-ref ref="FA-tomp2p" />
+  </logger>
+
+  <logger name="org.nebulostore.conductor">
+    <level value="TRACE" />
+    <appender-ref ref="FA-testing"/>
+  </logger>
+
+  <logger name="org.nebulostore.systest">
+    <level value="TRACE" />
+    <appender-ref ref="FA-testing"/>
+  </logger>
+
+  <logger name="org.nebulostore.dfuntest">
+    <level value="TRACE" />
+    <appender-ref ref="FA-testing"/>
+  </logger>
+  
+  <logger name="me.gregorias.dfuntest">
+    <level value="TRACE" />
+    <appender-ref ref="FA-testing"/>
+  </logger>
+
+  <logger name="org.nebulostore.crypto">
+    <level value="INFO" />
+    <appender-ref ref="FA-crypto"/>
+  </logger>
+
+  <logger name="org.nebulostore.dispatcher">
+    <level value="INFO" />
+    <appender-ref ref="FA-dispatcher"/>
+  </logger>
+
+  <logger name="org.nebulostore.networkmonitor">
+    <level value="INFO" />
+    <appender-ref ref="FA-networkmonitor"/>
+  </logger>
+
+  <logger name="org.nebulostore.peers">
+    <level value="INFO" />
+    <appender-ref ref="FA-peers"/>
+  </logger>
+
+  <logger name="org.nebulostore.replicator">
+    <level value="INFO" />
+    <appender-ref ref="FA-replicator"/>
+  </logger>
+
+  <logger name="org.nebulostore.replicaresolver">
+    <level value="INFO" />
+    <appender-ref ref="FA-replicaresolver"/>
+  </logger>
+
+  <logger name="org.nebulostore.timer">
+    <level value="INFO" />
+    <appender-ref ref="FA-timer"/>
+  </logger>
+
+  <logger name="org.nebulostore.utils">
+    <level value="INFO" />
+    <appender-ref ref="FA-utils"/>
+  </logger>
+
+  <logger name="org.nebulostore.rest">
+    <level value="DEBUG" />
+    <appender-ref ref="FA-rest"/>
+  </logger>
+  
+  <logger name="org.nebulostore.coding">
+    <level value="INFO" />
+    <appender-ref ref="FA-coding"/>
+  </logger>
+  
+  <logger name="org.glassfish.jersey">
+    <level value="INFO" />
+    <appender-ref ref="FA-jersey"/>
+  </logger>
+
+  <logger name="net.schmizz.sshj">
+    <level value="INFO" />
+    <appender-ref ref="FA-ssh"/>
+  </logger>
+
+  <root>
+    <level value="ERROR" />
+    <appender-ref ref="CA" />
+  </root>
+
+</log4j:configuration>
+

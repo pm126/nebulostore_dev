@@ -1,0 +1,14 @@
+This directory contains files with information about nodes in planet lab:
+
+    allnodes.py - contacts planet-lab API to get info for bootable_nodes.txt,
+        the current list of nodes in our planet-lab slice that are
+        in state 'boot'. Save stdout to bootable_nodes.txt
+
+    hostavailabilitytest/test_host_availability.sh -i bootable_nodes.txt -
+        run java throughput tests on bootable_nodes.txt;
+        save stdout to hosts.txt
+
+    hosts.txt - List of all working hosts used for testing.
+        roti.mimuw.edu.pl
+        prata.mimuw.edu.pl
+        should be at the top of the list

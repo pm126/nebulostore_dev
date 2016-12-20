@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- String is default attribute type -->
+<peer>
+    <!-- Application Key, a unique user identifier. -->
+    <app-key>
+        11
+    </app-key>
+    <!-- Main class that is created and executed when Nebulostore starts,
+         'org.nebulostore.peers.Peer' is the full, standard instance,
+         'org.nebulostore.conductor.TestingPeer' is the test execution environment. -->
+    <class-name>
+        org.nebulostore.peers.Peer
+    </class-name>
+    <configuration-class-name>
+        org.nebulostore.peers.PeerConfiguration
+    </configuration-class-name>
+    <peer>
+      <registration-timeout>
+        30
+      </registration-timeout>
+    </peer>
+    <replicator>
+        <storage-path>
+            storage
+        </storage-path>
+        <replication-group-update-timeout>
+            5
+        </replication-group-update-timeout>
+      <storage-path>
+        storage
+      </storage-path>
+    </replicator>
+    <broker>
+      <default-contract-size-kb>
+        1024
+      </default-contract-size-kb>
+      <space-contributed-kb>
+        130720
+      </space-contributed-kb>
+      <contracts-evaluator>
+        default
+      </contracts-evaluator>
+      <contracts-selection-algorithm>
+        greedy
+      </contracts-selection-algorithm>
+      <contracts-improvement-period-sec>
+        30
+      </contracts-improvement-period-sec>
+      <contracts-improvement-delay-sec>
+        30
+      </contracts-improvement-delay-sec>
+      <max-contracts-multiplicity>
+        1
+      </max-contracts-multiplicity>
+      <replication-group-size>
+        4
+      </replication-group-size>
+      <unused-contracts-max-number>
+        5
+      </unused-contracts-max-number>
+    </broker>
+    <networkmonitor>
+      <get-stats-timeout-secs>
+        2
+      </get-stats-timeout-secs>
+      <random-peers-sample-size>
+        3
+      </random-peers-sample-size>
+      <statistics-update-interval-millis>
+        60000
+      </statistics-update-interval-millis>
+    </networkmonitor>
+    <communication>
+        <!-- Which version of communication module to use.
+             Use communication or newcommunication -->
+        <comm-module>
+            communication
+        </comm-module>
+        <address-map-check-interval>
+            60000
+        </address-map-check-interval>
+        <local-net-address>
+        </local-net-address>
+        <bootstrap-net-address>
+        </bootstrap-net-address>
+        <!-- Sets CommAddress to comm-address iff not empty, otherwise
+             CommAddress is a random UUID. comm-address can be an integer or an
+             UUID formatted string, where UUID syntax is defined as
+             (from java's doc):
+                 UUID                   = 4*<hexOctet> "-" 2*hexOctet "-"
+                                          2*<hexOctet> "-" 2*<hexOctet> "-"
+                                          6*<hexOctet>
+                 hexOctet               = <hexDigit><hexDigit> -->
+        <comm-address>
+        </comm-address>
+        <bootstrap-comm-address>
+        </bootstrap-comm-address>
+        <!-- Time in miliseconds inidicating interval between sent gossips-->
+        <gossip-period type="Integer">
+            20000
+        </gossip-period>
+        <one-time-uniform-gossip-n-replicators type="Integer">
+            3
+        </one-time-uniform-gossip-n-replicators>
+        <ports>
+            <!-- Main port used by local instance for communication. -->
+            <comm-cli-port type="Integer">
+                10101
+            </comm-cli-port>
+            <!-- Port used by bootstrap server for listening to welcome messages. -->
+            <bootstrap-port type="Integer">
+                10201
+            </bootstrap-port>
+            <!--Port used by local instance for listening to tomP2P communication. -->
+            <tomp2p-port type="Integer">
+                10301
+            </tomp2p-port>
+            <!--Information which port is used by bootstrap server for tomP22 communication.
+                Should be equal to tomp2p-port for bootstrap server. -->
+            <bootstrap-server-tomp2p-port type="Integer">
+                10301
+            </bootstrap-server-tomp2p-port>
+        </ports>
+        <dht>
+            <provider>
+                bdb
+            </provider>
+            <bdb-peer>
+                <!-- 'storage-holder' or 'proxy' -->
+                <type>
+                    storage-holder
+                </type>
+                <holder-comm-address>
+                </holder-comm-address>
+                <sleepycat>
+                    <storage-path>
+                        storage/bdb
+                    </storage-path>
+                    <storage-name>
+                        bdb-dht
+                    </storage-name>
+                </sleepycat>
+            </bdb-peer>
+        </dht>
+        <bootstrap>
+            <!-- 'client' or 'server' -->
+            <mode>
+                client
+            </mode>
+            <address>
+                localhost
+            </address>
+        </bootstrap>
+        <remotemap>
+            <mode>
+                server
+            </mode>
+            <local-port>
+            </local-port>
+            <server-net-address>
+            </server-net-address>
+            <server-port>
+            </server-port>
+        </remotemap>
+        <cling-config>
+            resources/conf/cling.logging
+        </cling-config>
+    </communication>
+    <async>
+	<limited-selector-limit>
+	    5
+	</limited-selector-limit>
+    </async>
+    <persistance>
+        <sql-keyvalue-store>
+            <host>naan.mimuw.edu.pl</host>
+            <port>5432</port>
+            <database>postgres</database>
+            <user>postgres</user>
+            <password>latwehaslo_pwr</password>
+            <update_key type="Boolean">true</update_key>
+        </sql-keyvalue-store>
+    </persistance>
+    <systest>
+        <is-server type="Boolean">
+            false
+        </is-server>
+        <num-test-participants type="Integer">
+            3
+        </num-test-participants>
+        <!-- TestingPeer executes the following list of test cases. -->
+        <testing-peer-class-list>
+            org.nebulostore.conductor.pingpong.PingPongServer;org.nebulostore.conductor.readwrite.ReadWriteServer
+        </testing-peer-class-list>
+        <networkmonitor>
+          <response-frequency>
+            1.0
+          </response-frequency>
+        </networkmonitor>
+        <communication>
+            <messageexchange>
+                <mode>
+                    server
+                </mode>
+                <server>
+                    <client-count>
+                    </client-count>
+                    <client-timeout>
+                        60000
+                    </client-timeout>
+                    <answer-timeout>
+                        60000
+                    </answer-timeout>
+                </server>
+                <client>
+                    <server-net-address>
+                    </server-net-address>
+                    <contact-timeout>
+                        20000
+                    </contact-timeout>
+                </client>
+            </messageexchange>
+        </communication>
+        <data-file>
+            test.data
+        </data-file>
+    </systest>
+    <rest-api>
+        <enabled type="Boolean">true</enabled>
+        <server-config>
+            <host>http://0.0.0.0</host>
+            <port type="Integer">14000</port>
+        </server-config>
+        <replicator-write-file-form>
+            resources/web/replicator-write-file-form.html
+        </replicator-write-file-form>
+    </rest-api>
+    <security>
+        <private-key-file>keys/private.key</private-key-file>
+        <public-key-file>keys/public.key</public-key-file>
+    </security>
+    <coding>
+        <type>pyramid</type>
+        <pyramid>
+            <!-- NOTE: The final size of encoded object has to be equal to
+            the number of peers in replication group -->
+            <groups-number>2</groups-number>
+            <in-symbols-number>2</in-symbols-number>
+            <out-symbols-number>3</out-symbols-number>
+            <global-redundancy-size>0</global-redundancy-size>
+        </pyramid>
+    </coding>
+</peer>
